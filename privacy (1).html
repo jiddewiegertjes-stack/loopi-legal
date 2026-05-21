@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Loopi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F3EE;
+    --bg-card: #FAF8F3;
+    --ink: #2C3530;
+    --ink-soft: #6B7670;
+    --ink-faint: #9CA39E;
+    --sage: #5C7560;
+    --sage-soft: #8FA193;
+    --rule: rgba(44, 53, 48, 0.12);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+  
+  /* ─── Top bar ────────────────────────────── */
+  
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 48px;
+    border-bottom: 1px solid var(--rule);
+  }
+  
+  .brand {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  
+  .nav-link {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  
+  .nav-link:hover {
+    color: var(--sage);
+  }
+  
+  /* ─── Container ──────────────────────────── */
+  
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 80px 48px 120px;
+  }
+  
+  /* ─── Hero ───────────────────────────────── */
+  
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 24px;
+  }
+  
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(56px, 9vw, 92px);
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+  
+  h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--sage);
+  }
+  
+  .meta {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink-faint);
+    letter-spacing: 0.02em;
+    padding-bottom: 64px;
+    border-bottom: 1px solid var(--rule);
+  }
+  
+  /* ─── Section ────────────────────────────── */
+  
+  section {
+    padding: 72px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  
+  section:last-of-type {
+    border-bottom: none;
+  }
+  
+  .section-num {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-soft);
+    margin-bottom: 16px;
+  }
+  
+  h2 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 32px;
+    max-width: 580px;
+  }
+  
+  p {
+    font-size: 16px;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  
+  p:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* ─── List with categorical tags ─────────── */
+  
+  .data-list {
+    list-style: none;
+    margin-top: 12px;
+  }
+  
+  .data-list li {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+  
+  .data-list li:last-child {
+    border-bottom: none;
+  }
+  
+  .tag {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage);
+    background: rgba(92, 117, 96, 0.08);
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-right: 12px;
+    vertical-align: middle;
+  }
+  
+  strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  
+  /* ─── Rights/purposes — dashed lines ─────── */
+  
+  .dashed-list {
+    list-style: none;
+    margin-top: 4px;
+  }
+  
+  .dashed-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 14px;
+    font-size: 16px;
+    color: var(--ink);
+  }
+  
+  .dashed-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--sage-soft);
+  }
+  
+  /* ─── Contact link ───────────────────────── */
+  
+  .contact-link {
+    display: inline-block;
+    font-family: var(--serif);
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--sage);
+    text-decoration: none;
+    border-bottom: 1px solid var(--sage-soft);
+    padding-bottom: 4px;
+    margin-top: 8px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  
+  .contact-link:hover {
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  
+  /* ─── Footer ─────────────────────────────── */
+  
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .footer-brand {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink-soft);
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 32px;
+  }
+  
+  .footer-links a {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  
+  .footer-links a:hover {
+    color: var(--sage);
+  }
+  
+  /* ─── Mobile ─────────────────────────────── */
+  
+  @media (max-width: 640px) {
+    .topbar { padding: 24px; }
+    .container { padding: 56px 24px 80px; }
+    section { padding: 48px 0; }
+    footer { padding: 32px 24px; }
+    .footer-links { gap: 20px; }
+    .contact-link { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html" class="brand">loopi</a>
+  <a href="terms.html" class="nav-link">Terms of Service →</a>
+</div>
+
+<main class="container">
+  
+  <div class="eyebrow">Legal</div>
+  <h1>Privacy <em>Policy</em></h1>
+  <div class="meta">Last updated: May 2026 · Effective: May 2026</div>
+  
+  <section>
+    <div class="section-num">Introduction</div>
+    <h2>We take your privacy seriously.</h2>
+    <p>Loopi ("we", "our", or "us") is a mobile application that helps you reflect on your runs through mood check-ins, written notes, and optional photos — a quiet journal for mindful running.</p>
+    <p>This Privacy Policy explains what data we collect, why we collect it, and how we protect it. By using Loopi, you agree to the collection and use of information in accordance with this policy. If you do not agree, please do not use the app.</p>
+  </section>
+  
+  <section>
+    <div class="section-num">01 — Data we collect</div>
+    <h2>What information Loopi collects.</h2>
+    <p>We collect only the data necessary to provide the app's functionality. Here is a full overview:</p>
+    <ul class="data-list">
+      <li><span class="tag">Auth</span><strong>Email address</strong> — collected when you sign in via email OTP or Sign in with Apple. Used solely for authentication. We do not send marketing emails.</li>
+      <li><span class="tag">Profile</span><strong>Display name and onboarding answers</strong> — entered by you during onboarding (age range, running frequency, what running helps you with, how you usually feel after a run). Stored in our database and used to personalise your experience.</li>
+      <li><span class="tag">Runs</span><strong>Run entries</strong> — when you log a run, we store the date, distance (optional), mood before and after, body check-in, written notes, and optional reflection prompts. This data is private to your account.</li>
+      <li><span class="tag">Photos</span><strong>Optional photo uploads</strong> — when you attach a photo to a run entry, the image is resized and re-encoded on your device before upload, removing any embedded EXIF metadata (including GPS location, camera model, and timestamps). Photos are stored privately in our secure storage and are only accessible by you. Photos are never shared, never used for AI training, and never made public.</li>
+      <li><span class="tag">Preferences</span><strong>App preferences</strong> — your preferred distance unit (kilometres or miles) is stored in our database to keep your experience consistent across devices.</li>
+      <li><span class="tag">Local</span><strong>On-device storage</strong> — your runs and photos are also cached locally on your device using standard iOS storage (SwiftData) so the app works offline. This local data is removed when you delete the app or your account.</li>
+    </ul>
+  </section>
+  
+  <section>
+    <div class="section-num">02 — How we use your data</div>
+    <h2>Your data is used only to run Loopi.</h2>
+    <p>We use the data we collect for the following purposes only:</p>
+    <ul class="dashed-list">
+      <li>To authenticate you and maintain your account</li>
+      <li>To store and display your run entries, moods, notes, and photos</li>
+      <li>To personalise the app (greeting, unit preference, onboarding answers)</li>
+      <li>To sync your data between devices if you sign in on more than one</li>
+      <li>To allow you to permanently delete your data when you choose to</li>
+    </ul>
+    <p style="margin-top: 24px;">We do not use your data for advertising. We do not sell your data. We do not use your photos, notes, or any other content to train AI or machine learning models. We do not share your data with third parties except as described in Section 04.</p>
+  </section>
+  
+  <section>
+    <div class="section-num">03 — Data storage</div>
+    <h2>Where your data lives.</h2>
+    <p>Your account data, runs, and photos are stored in <strong>Supabase</strong>, a secure cloud database and storage provider. Data is stored in the EU region. Supabase is SOC 2 compliant.</p>
+    <p>Photos are uploaded to a private Supabase Storage bucket. Access is restricted by row-level security rules: only you can read or modify your own photos. Public access is not possible.</p>
+    <p>Authentication emails (such as your sign-in code) are sent via <strong>Resend</strong>, an email delivery service operating from the EU. Resend only processes your email address for the purpose of delivering the message, and does not store your email content beyond delivery.</p>
+    <p>Some data (your runs, photos, and app preferences) is also stored locally on your device via standard iOS storage mechanisms for offline access.</p>
+  </section>
+  
+  <section>
+    <div class="section-num">04 — Third parties</div>
+    <h2>Who else touches your data.</h2>
+    <p>We use the following third-party services, each of which has its own privacy policy:</p>
+    <ul class="dashed-list">
+      <li><strong>Supabase</strong> (supabase.com) — database, authentication, and photo storage</li>
+      <li><strong>Resend</strong> (resend.com) — transactional email delivery</li>
+      <li><strong>Apple</strong> (apple.com) — Sign in with Apple authentication and app distribution</li>
+    </ul>
+    <p style="margin-top: 24px;">We do not integrate any advertising networks, analytics platforms, data brokers, or social media tracking. Loopi has no analytics by design — your reflections are yours alone.</p>
+  </section>
+  
+  <section>
+    <div class="section-num">05 — Your rights (GDPR)</div>
+    <h2>You are in control of your data.</h2>
+    <p>As a user based in the European Union or European Economic Area, you have the following rights under the General Data Protection Regulation (GDPR):</p>
+    <ul class="dashed-list">
+      <li><strong>Right of access</strong> — you can request a copy of all data we hold about you, including your runs, photos, and profile information</li>
+      <li><strong>Right to rectification</strong> — you can correct inaccurate data via the Settings screen or by editing a run entry directly</li>
+      <li><strong>Right to erasure</strong> — you can delete your account and all associated data (including photos) directly in the app via Settings → Delete account</li>
+      <li><strong>Right to portability</strong> — you can request an export of your data by contacting us</li>
+      <li><strong>Right to object</strong> — you can object to any data processing by contacting us</li>
+    </ul>
+    <p style="margin-top: 24px;">To exercise any of these rights, contact us at the address in Section 08.</p>
+  </section>
+  
+  <section>
+    <div class="section-num">06 — Data retention</div>
+    <h2>How long we keep your data.</h2>
+    <p>We retain your data for as long as your account is active. If you delete your account via the app, all personal data associated with your account — including your runs, photos, profile, and authentication record — is permanently deleted from our servers within 30 days.</p>
+    <p>Individual run entries and photos can be deleted at any time from within the app without deleting your entire account. Local data stored on your device is removed when you uninstall the app or sign out.</p>
+  </section>
+  
+  <section>
+    <div class="section-num">07 — Children</div>
+    <h2>Loopi is not for children under 13.</h2>
+    <p>Loopi is not directed at children under the age of 13. We do not knowingly collect personal data from children under 13. If you believe we have inadvertently collected such data, please contact us immediately and we will delete it.</p>
+  </section>
+  
+  <section>
+    <div class="section-num">08 — Changes</div>
+    <h2>When this policy changes.</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of significant changes via a notice in the app or by updating the "Last updated" date at the top of this page. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+  </section>
+  
+  <section>
+    <div class="section-num">Contact</div>
+    <h2>Questions about your privacy?</h2>
+    <p>If you have any questions about this Privacy Policy or how we handle your data, you can reach us at:</p>
+    <a class="contact-link" href="mailto:jiddewiegertjes@gmail.com">jiddewiegertjes@gmail.com</a>
+  </section>
+  
+</main>
+
+<footer>
+  <span class="footer-brand">loopi</span>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </div>
+</footer>
+
+</body>
+</html>
