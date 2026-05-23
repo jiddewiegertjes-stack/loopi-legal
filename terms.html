@@ -1,146 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service — Loopi</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Loopi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F3EE;
+    --bg-card: #FAF8F3;
+    --ink: #2C3530;
+    --ink-soft: #6B7670;
+    --ink-faint: #9CA39E;
+    --sage: #5C7560;
+    --sage-soft: #8FA193;
+    --rule: rgba(44, 53, 48, 0.12);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+  
+  /* ─── Top bar ────────────────────────────── */
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 48px;
+    border-bottom: 1px solid var(--rule);
+  }
+  
+  .brand {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  
+  .nav-link {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  
+  .nav-link:hover { color: var(--sage); }
+  
+  /* ─── Container ──────────────────────────── */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 80px 48px 120px;
+  }
+  
+  /* ─── Hero ───────────────────────────────── */
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 24px;
+  }
+  
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(56px, 9vw, 92px);
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+  
+  h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--sage);
+  }
+  
+  .meta {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink-faint);
+    letter-spacing: 0.02em;
+    padding-bottom: 64px;
+    border-bottom: 1px solid var(--rule);
+  }
+  
+  /* ─── Section ────────────────────────────── */
+  section {
+    padding: 72px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  
+  section:last-of-type { border-bottom: none; }
+  
+  .section-num {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-soft);
+    margin-bottom: 16px;
+  }
+  
+  h2 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 32px;
+    max-width: 580px;
+  }
+  
+  .h2-sub {
+    font-family: var(--serif);
+    font-size: clamp(22px, 3vw, 28px);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    max-width: 580px;
+  }
+  
+  p {
+    font-size: 16px;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  
+  p:last-child { margin-bottom: 0; }
+  
+  a {
+    color: var(--sage);
+    text-decoration: underline;
+    text-decoration-color: var(--sage-soft);
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+  }
+  
+  a:hover { color: var(--ink); }
+  
+  /* ─── Bulleted prohibitions list ─────────── */
+  .rules-list { list-style: none; margin-top: 12px; margin-bottom: 24px; }
+  
+  .rules-list li {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+  
+  .rules-list li:last-child { border-bottom: none; }
+  
+  /* ─── Dashed list ────────────────────────── */
+  .dashed-list { list-style: none; margin-top: 4px; }
+  
+  .dashed-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 14px;
+    font-size: 16px;
+    color: var(--ink);
+  }
+  
+  .dashed-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--sage-soft);
+  }
+  
+  strong { font-weight: 600; color: var(--ink); }
+  
+  /* ─── Contact link ───────────────────────── */
+  .contact-link {
+    display: inline-block;
+    font-family: var(--serif);
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--sage);
+    text-decoration: none;
+    border-bottom: 1px solid var(--sage-soft);
+    padding-bottom: 4px;
+    margin-top: 8px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  
+  .contact-link:hover {
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  
+  /* ─── Footer ─────────────────────────────── */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .footer-brand {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink-soft);
+  }
+  
+  .footer-links { display: flex; gap: 32px; }
+  
+  .footer-links a {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  
+  .footer-links a:hover { color: var(--sage); }
+  
+  /* ─── Mobile ─────────────────────────────── */
+  @media (max-width: 640px) {
+    .topbar { padding: 24px; }
+    .container { padding: 56px 24px 80px; }
+    section { padding: 48px 0; }
+    footer { padding: 32px 24px; }
+    .footer-links { gap: 20px; }
+    .contact-link { font-size: 22px; }
+  }
+</style>
 </head>
 <body>
-    <header class="site-header">
-        <a href="index.html" class="logo">loopi</a>
-        <a href="privacy.html" class="nav-link">Privacy Policy →</a>
-    </header>
 
-    <main class="legal-page">
-        <div class="page-eyebrow">Legal</div>
-        <h1>Terms of <em>Service</em></h1>
-        <p class="page-meta">Last updated: May 2026 · Effective: May 2026</p>
+<div class="topbar">
+  <a href="index.html" class="brand">loopi</a>
+  <a href="privacy.html" class="nav-link">Privacy Policy →</a>
+</div>
 
-        <section class="legal-section">
-            <div class="section-label">Introduction</div>
-            <h2>Using Loopi means agreeing to these terms.</h2>
-            <p>These Terms of Service ("Terms") govern your use of the Loopi mobile application ("the App"), operated by the Loopi developer ("we", "us", or "our"). Please read them carefully.</p>
-            <p>By downloading, installing, or using Loopi, you confirm that you are at least 13 years of age and agree to be bound by these Terms. If you do not agree, do not use the App.</p>
-        </section>
+<main class="container">
+  
+  <div class="eyebrow">Legal</div>
+  <h1>Terms of <em>Service</em></h1>
+  <div class="meta">Last updated: May 2026 · Effective: May 2026</div>
+  
+  <section>
+    <div class="section-num">Introduction</div>
+    <h2>Using Loopi means agreeing to these terms.</h2>
+    <p>These Terms of Service ("Terms") govern your use of the Loopi mobile application ("the App"), operated by the Loopi developer ("we", "us", or "our"). Please read them carefully.</p>
+    <p>By downloading, installing, or using Loopi, you confirm that you are at least 13 years of age and agree to be bound by these Terms. If you do not agree, do not use the App.</p>
+  </section>
+  
+  <section>
+    <div class="section-num">01 — What Loopi is</div>
+    <h2>A quiet journal for mindful running.</h2>
+    <p>Loopi is a mobile application that helps you reflect on your runs through mood check-ins, written notes, body awareness prompts, and optional photos. It is a journal — not a tracker. Loopi does not measure pace, calories, or competitive metrics.</p>
+    <p>The App is provided as-is and we reserve the right to change, add, or remove features at any time without notice.</p>
+  </section>
+  
+  <section>
+    <div class="section-num">02 — Your account</div>
+    <h2>You are responsible for your account.</h2>
+    <p>To use Loopi you must create an account using a valid email address or Sign in with Apple. You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account.</p>
+    <p>You agree to provide accurate information when creating your profile. You may not impersonate another person or use a name that is offensive or that violates any third-party rights.</p>
+    <p>You may delete your account at any time via Settings → Delete account. Upon deletion, all your personal data is permanently removed from our servers within 30 days.</p>
+  </section>
+  
+  <section>
+    <div class="section-num">03 — Acceptable use</div>
+    <h2>Use Loopi responsibly.</h2>
+    <p>You agree to use Loopi only for lawful purposes and in a way that does not infringe the rights of others. The following are strictly prohibited:</p>
+    <ul class="rules-list">
+      <li><strong>No harmful content</strong> — do not use the App to create or upload content that is offensive, abusive, defamatory, obscene, or otherwise objectionable, including in photos or written notes.</li>
+      <li><strong>No illegal activity</strong> — do not use the App to facilitate any illegal activity, including but not limited to fraud, harassment, or violation of privacy.</li>
+      <li><strong>No interference</strong> — do not attempt to hack, reverse-engineer, or disrupt the App or its underlying infrastructure.</li>
+      <li><strong>No impersonation</strong> — do not impersonate any person or entity or misrepresent your affiliation with any person or entity.</li>
+      <li><strong>No automated access</strong> — do not use bots, scrapers, or automated scripts to access the App or its data.</li>
+    </ul>
+    <p>We reserve the right to suspend or terminate your account immediately if we determine, at our sole discretion, that you have violated these rules.</p>
+  </section>
+  
+  <section>
+    <div class="section-num">04 — Your content</div>
+    <h2>Your runs and reflections belong to you.</h2>
+    <p>Loopi allows you to create run entries, mood check-ins, written notes, and photo memories. This content is private to your account and is not visible to other users. You retain full ownership of everything you create in Loopi.</p>
+    <p>By creating content in the App, you grant us a limited, non-exclusive licence to store, sync, and display that content solely for the purpose of providing the App's functionality to you. We do not use the content of your runs, notes, or photos for any other purpose, including advertising or training AI models.</p>
+  </section>
+  
+  <section>
+    <div class="section-num">05 — Loopi Pro and in-app purchases</div>
+    <h2>About Loopi Pro.</h2>
+    <p>Loopi is free to download and use for your first 5 runs. To continue logging runs after that, you may purchase <strong>Loopi Pro</strong>, which is offered as either:</p>
+    <ul class="dashed-list">
+      <li><strong>Loopi Pro Monthly</strong> — an auto-renewable subscription at €2.99 per month (or local equivalent)</li>
+      <li><strong>Loopi Pro Lifetime</strong> — a one-time, non-recurring purchase at €39.99 (or local equivalent), granting permanent Pro access on the purchasing Apple ID</li>
+    </ul>
+    <p style="margin-top: 24px;">Prices may vary by region and are shown in your local currency at the time of purchase. All purchases are processed by Apple via the App Store using your Apple ID.</p>
 
-        <section class="legal-section">
-            <div class="section-label">01 — What Loopi is</div>
-            <h2>A quiet journal for mindful running.</h2>
-            <p>Loopi is a mobile application that helps you reflect on your runs through mood check-ins, written notes, body awareness prompts, and optional photos. It is a journal — not a tracker. Loopi does not measure pace, calories, or competitive metrics.</p>
-            <p>The App is provided as-is and we reserve the right to change, add, or remove features at any time without notice.</p>
-        </section>
+    <div class="h2-sub">Auto-renewal of subscriptions.</div>
+    <p>Loopi Pro Monthly is an auto-renewable subscription. Unless cancelled at least 24 hours before the end of the current billing period, your subscription will automatically renew at the same price for another month. Payment is charged to your Apple ID account upon confirmation of purchase and upon each renewal.</p>
 
-        <section class="legal-section">
-            <div class="section-label">02 — Your account</div>
-            <h2>You are responsible for your account.</h2>
-            <p>To use Loopi you must create an account using a valid email address or Sign in with Apple. You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account.</p>
-            <p>You agree to provide accurate information when creating your profile. You may not impersonate another person or use a name that is offensive or that violates any third-party rights.</p>
-            <p>You may delete your account at any time via Settings → Delete account. Upon deletion, all your personal data is permanently removed from our servers within 30 days.</p>
-        </section>
+    <div class="h2-sub">Managing and cancelling your subscription.</div>
+    <p>You can manage or cancel your Loopi Pro Monthly subscription at any time:</p>
+    <ul class="dashed-list">
+      <li>In the Loopi app: Settings → Manage subscription</li>
+      <li>On your iPhone: Settings → [your name] → Subscriptions</li>
+      <li>Or directly at <a href="https://apps.apple.com/account/subscriptions">apps.apple.com/account/subscriptions</a></li>
+    </ul>
+    <p style="margin-top: 24px;">If you cancel, you will retain access to Pro features until the end of the current billing period. No partial refunds are issued for unused time. The Lifetime purchase is not a subscription and does not auto-renew.</p>
 
-        <section class="legal-section">
-            <div class="section-label">03 — Acceptable use</div>
-            <h2>Use Loopi responsibly.</h2>
-            <p>You agree to use Loopi only for lawful purposes and in a way that does not infringe the rights of others. The following are strictly prohibited:</p>
-            <ul>
-                <li><strong>No harmful content</strong> — do not use the App to create or upload content that is offensive, abusive, defamatory, obscene, or otherwise objectionable, including in photos or written notes.</li>
-                <li><strong>No illegal activity</strong> — do not use the App to facilitate any illegal activity, including but not limited to fraud, harassment, or violation of privacy.</li>
-                <li><strong>No interference</strong> — do not attempt to hack, reverse-engineer, or disrupt the App or its underlying infrastructure.</li>
-                <li><strong>No impersonation</strong> — do not impersonate any person or entity or misrepresent your affiliation with any person or entity.</li>
-                <li><strong>No automated access</strong> — do not use bots, scrapers, or automated scripts to access the App or its data.</li>
-            </ul>
-            <p>We reserve the right to suspend or terminate your account immediately if we determine, at our sole discretion, that you have violated these rules.</p>
-        </section>
+    <div class="h2-sub">Restoring purchases.</div>
+    <p>If you reinstall Loopi or use it on a new device, you can restore your previous purchases via Settings → Restore purchases. Restoration works for any purchase made on your current Apple ID.</p>
 
-        <section class="legal-section">
-            <div class="section-label">04 — Your content</div>
-            <h2>Your runs and reflections belong to you.</h2>
-            <p>Loopi allows you to create run entries, mood check-ins, written notes, and photo memories. This content is private to your account and is not visible to other users. You retain full ownership of everything you create in Loopi.</p>
-            <p>By creating content in the App, you grant us a limited, non-exclusive licence to store, sync, and display that content solely for the purpose of providing the App's functionality to you. We do not use the content of your runs, notes, or photos for any other purpose, including advertising or training AI models.</p>
-        </section>
+    <div class="h2-sub">Refunds.</div>
+    <p>All in-app purchases are handled by Apple. Refund requests must be submitted directly to Apple via <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. We are not able to issue refunds directly. Refund decisions are at Apple's discretion in line with their App Store policies.</p>
 
-        <section class="legal-section">
-            <div class="section-label">05 — Loopi Pro and in-app purchases</div>
-            <h2>About Loopi Pro.</h2>
-            <p>Loopi is free to download and use for your first 5 runs. To continue logging runs after that, you may purchase <strong>Loopi Pro</strong>, which is offered as either:</p>
-            <ul>
-                <li><strong>Loopi Pro Monthly</strong> — an auto-renewable subscription at €2.99 per month (or local equivalent)</li>
-                <li><strong>Loopi Pro Lifetime</strong> — a one-time, non-recurring purchase at €39.99 (or local equivalent), granting permanent Pro access on the purchasing Apple ID</li>
-            </ul>
-            <p>Prices may vary by region and are shown in your local currency at the time of purchase. All purchases are processed by Apple via the App Store using your Apple ID.</p>
+    <div class="h2-sub">EU right of withdrawal.</div>
+    <p>If you are a consumer in the European Union, you have a statutory right of withdrawal of 14 days for digital purchases. By starting to use Loopi Pro immediately after purchase, you acknowledge that this right of withdrawal lapses once the digital content is delivered and accessed. Where local law grants further refund rights, those rights remain unaffected.</p>
+  </section>
+  
+  <section>
+    <div class="section-num">06 — Running safety</div>
+    <h2>Loopi is not a fitness coach.</h2>
+    <p>Loopi is a reflection tool. It does not provide medical, training, or fitness advice. You are solely responsible for your own safety and wellbeing when running.</p>
+    <p>If you have any health concerns, consult a qualified medical or fitness professional before starting or changing your running routine. Listen to your body, run within your limits, and stop if you experience pain or discomfort.</p>
+    <p>We are not liable for any injury, damage, or loss that results from your running activity or from your use of the App.</p>
+  </section>
+  
+  <section>
+    <div class="section-num">07 — Intellectual property</div>
+    <h2>The App and its content are ours.</h2>
+    <p>Loopi, its design, code, and all associated intellectual property are owned by us or our licensors. You may not copy, reproduce, distribute, or create derivative works based on the App without our express written permission.</p>
+    <p>The Loopi name, logo, and brand elements may not be used without our prior written consent.</p>
+  </section>
+  
+  <section>
+    <div class="section-num">08 — Disclaimers</div>
+    <h2>The App is provided "as is".</h2>
+    <p>Loopi is provided without warranty of any kind, express or implied. We do not guarantee that the App will be available at all times or free from errors.</p>
+    <p>To the fullest extent permitted by applicable law, we disclaim all liability for any indirect, incidental, special, or consequential damages arising from your use of the App.</p>
+  </section>
+  
+  <section>
+    <div class="section-num">09 — Governing law</div>
+    <h2>These Terms are governed by Dutch law.</h2>
+    <p>These Terms shall be governed by and construed in accordance with the laws of the Netherlands, without regard to its conflict of law provisions.</p>
+    <p>Any disputes arising from these Terms or your use of the App shall be subject to the exclusive jurisdiction of the courts of the Netherlands.</p>
+  </section>
+  
+  <section>
+    <div class="section-num">10 — Changes to these Terms</div>
+    <h2>We may update these Terms.</h2>
+    <p>We reserve the right to update these Terms at any time. We will notify you of significant changes via a notice in the App or by updating the "Last updated" date above. Continued use of the App after any changes constitutes your acceptance of the new Terms.</p>
+  </section>
+  
+  <section>
+    <div class="section-num">Contact</div>
+    <h2>Questions about these Terms?</h2>
+    <p>If you have any questions about these Terms of Service, contact us at:</p>
+    <a class="contact-link" href="mailto:jiddewiegertjes@gmail.com">jiddewiegertjes@gmail.com</a>
+  </section>
+  
+</main>
 
-            <h2 style="margin-top: 2em;">Auto-renewal of subscriptions.</h2>
-            <p>Loopi Pro Monthly is an auto-renewable subscription. Unless cancelled at least 24 hours before the end of the current billing period, your subscription will automatically renew at the same price for another month. Payment is charged to your Apple ID account upon confirmation of purchase and upon each renewal.</p>
+<footer>
+  <span class="footer-brand">loopi</span>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </div>
+</footer>
 
-            <h2 style="margin-top: 2em;">Managing and cancelling your subscription.</h2>
-            <p>You can manage or cancel your Loopi Pro Monthly subscription at any time:</p>
-            <ul>
-                <li>In the Loopi app: Settings → Manage subscription</li>
-                <li>On your iPhone: Settings → [your name] → Subscriptions</li>
-                <li>Or directly at <a href="https://apps.apple.com/account/subscriptions">apps.apple.com/account/subscriptions</a></li>
-            </ul>
-            <p>If you cancel, you will retain access to Pro features until the end of the current billing period. No partial refunds are issued for unused time. The Lifetime purchase is not a subscription and does not auto-renew.</p>
-
-            <h2 style="margin-top: 2em;">Restoring purchases.</h2>
-            <p>If you reinstall Loopi or use it on a new device, you can restore your previous purchases via Settings → Restore purchases. Restoration works for any purchase made on your current Apple ID.</p>
-
-            <h2 style="margin-top: 2em;">Refunds.</h2>
-            <p>All in-app purchases are handled by Apple. Refund requests must be submitted directly to Apple via <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. We are not able to issue refunds directly. Refund decisions are at Apple's discretion in line with their App Store policies.</p>
-
-            <h2 style="margin-top: 2em;">EU right of withdrawal.</h2>
-            <p>If you are a consumer in the European Union, you have a statutory right of withdrawal of 14 days for digital purchases. By starting to use Loopi Pro immediately after purchase, you acknowledge that this right of withdrawal lapses once the digital content is delivered and accessed. Where local law grants further refund rights, those rights remain unaffected.</p>
-        </section>
-
-        <section class="legal-section">
-            <div class="section-label">06 — Running safety</div>
-            <h2>Loopi is not a fitness coach.</h2>
-            <p>Loopi is a reflection tool. It does not provide medical, training, or fitness advice. You are solely responsible for your own safety and wellbeing when running.</p>
-            <p>If you have any health concerns, consult a qualified medical or fitness professional before starting or changing your running routine. Listen to your body, run within your limits, and stop if you experience pain or discomfort.</p>
-            <p>We are not liable for any injury, damage, or loss that results from your running activity or from your use of the App.</p>
-        </section>
-
-        <section class="legal-section">
-            <div class="section-label">07 — Intellectual property</div>
-            <h2>The App and its content are ours.</h2>
-            <p>Loopi, its design, code, and all associated intellectual property are owned by us or our licensors. You may not copy, reproduce, distribute, or create derivative works based on the App without our express written permission.</p>
-            <p>The Loopi name, logo, and brand elements may not be used without our prior written consent.</p>
-        </section>
-
-        <section class="legal-section">
-            <div class="section-label">08 — Disclaimers</div>
-            <h2>The App is provided "as is".</h2>
-            <p>Loopi is provided without warranty of any kind, express or implied. We do not guarantee that the App will be available at all times or free from errors.</p>
-            <p>To the fullest extent permitted by applicable law, we disclaim all liability for any indirect, incidental, special, or consequential damages arising from your use of the App.</p>
-        </section>
-
-        <section class="legal-section">
-            <div class="section-label">09 — Governing law</div>
-            <h2>These Terms are governed by Dutch law.</h2>
-            <p>These Terms shall be governed by and construed in accordance with the laws of the Netherlands, without regard to its conflict of law provisions.</p>
-            <p>Any disputes arising from these Terms or your use of the App shall be subject to the exclusive jurisdiction of the courts of the Netherlands.</p>
-        </section>
-
-        <section class="legal-section">
-            <div class="section-label">10 — Changes to these Terms</div>
-            <h2>We may update these Terms.</h2>
-            <p>We reserve the right to update these Terms at any time. We will notify you of significant changes via a notice in the App or by updating the "Last updated" date above. Continued use of the App after any changes constitutes your acceptance of the new Terms.</p>
-        </section>
-
-        <section class="legal-section">
-            <div class="section-label">Contact</div>
-            <h2>Questions about these Terms?</h2>
-            <p>If you have any questions about these Terms of Service, contact us at:</p>
-            <p><a href="mailto:jiddewiegertjes@gmail.com">jiddewiegertjes@gmail.com</a></p>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="footer-logo">loopi</div>
-        <nav class="footer-nav">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
-        </nav>
-    </footer>
 </body>
 </html>
